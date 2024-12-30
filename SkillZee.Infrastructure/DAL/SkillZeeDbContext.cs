@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SkillZee.Domain.Entities;
 
 namespace SkillZee.Infrastructure.DAL;
 
@@ -11,4 +12,6 @@ public sealed class SkillZeeDbContext: DbContext
             Database.Migrate();
         }
     }
+
+    public DbSet<User> Users { get; set; } = null!;
 }

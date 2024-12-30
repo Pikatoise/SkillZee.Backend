@@ -52,7 +52,7 @@ namespace SkillZee.API.Extensions
         public static WebApplicationBuilder AddData(this WebApplicationBuilder builder)
         {
             builder.Services.AddDbContext<SkillZeeDbContext>(opt =>
-                opt.UseNpgsql(builder.Configuration.GetConnectionString("SkillZee"))
+                opt.UseNpgsql(builder.Configuration.GetConnectionString("SkillZeeDB"))
             );
 
             return builder;
