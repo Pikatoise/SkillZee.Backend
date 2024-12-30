@@ -1,4 +1,6 @@
 
+using SkillZee.API.Extensions;
+
 namespace SkillZee.API
 {
     public class Program
@@ -9,6 +11,9 @@ namespace SkillZee.API
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
+
+            builder
+                .AddSwagger();
 
             var app = builder.Build();
 
