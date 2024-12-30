@@ -13,7 +13,8 @@ namespace SkillZee.API
             builder.Services.AddEndpointsApiExplorer();
 
             builder
-                .AddSwagger();
+                .AddSwagger()
+                .AddData();
 
             var app = builder.Build();
 

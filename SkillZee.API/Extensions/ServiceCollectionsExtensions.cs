@@ -1,4 +1,6 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+using SkillZee.Infrastructure.DAL;
 
 namespace SkillZee.API.Extensions
 {
@@ -43,6 +45,15 @@ namespace SkillZee.API.Extensions
                     }
                 });
             });
+
+            return builder;
+        }
+
+        public static WebApplicationBuilder AddData(this WebApplicationBuilder builder)
+        {
+            builder.Services.AddDbContext<SkillZeeDbContext>(opt =>
+                opt.UseNpgsql(builder.Configuration.GetConnectionString("SkillZee"))
+            );
 
             return builder;
         }
