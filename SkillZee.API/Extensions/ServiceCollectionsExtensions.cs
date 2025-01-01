@@ -1,6 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using SkillZee.Domain.Entities;
+using SkillZee.Domain.Interfaces.Repositories;
 using SkillZee.Infrastructure.DAL;
+using SkillZee.Infrastructure.DAL.Repositories;
 
 namespace SkillZee.API.Extensions
 {
@@ -54,6 +57,18 @@ namespace SkillZee.API.Extensions
             builder.Services.AddDbContext<SkillZeeDbContext>(opt =>
                 opt.UseNpgsql(builder.Configuration.GetConnectionString("SkillZeeDB"))
             );
+
+            builder.Services.AddScoped<IBaseRepository<User>, BaseRepository<User>>();
+            builder.Services.AddScoped<IBaseRepository<WorkerInfo>, BaseRepository<WorkerInfo>>();
+            builder.Services.AddScoped<IBaseRepository<Tip>, BaseRepository<Tip>>();
+            builder.Services.AddScoped<IBaseRepository<Skill>, BaseRepository<Skill>>();
+            builder.Services.AddScoped<IBaseRepository<OrderSpeed>, BaseRepository<OrderSpeed>>();
+            builder.Services.AddScoped<IBaseRepository<OrderResult>, BaseRepository<OrderResult>>();
+            builder.Services.AddScoped<IBaseRepository<Order>, BaseRepository<Order>>();
+            builder.Services.AddScoped<IBaseRepository<BalanceTransaction>, BaseRepository<BalanceTransaction>>();
+            builder.Services.AddScoped<IBaseRepository<Area>, BaseRepository<Area>>();
+
+            builder.Services.AddScoped<UnitOfWork>();
 
             return builder;
         }
