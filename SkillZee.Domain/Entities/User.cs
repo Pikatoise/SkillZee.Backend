@@ -2,17 +2,17 @@
 {
     public class User: BaseEntity
     {
-        public string Email { get; set; } = null!;
+        public required string Email { get; set; }
+        public required string Password { get; set; }
+        public required string Nickname { get; set; }
 
-        public string Password { get; set; } = null!;
+        public double Balance { get; set; }
 
-        public string Nickname { get; set; } = null!;
+        public required string AvatarUri { get; set; }
 
         public bool IsWorker { get; set; } = false;
 
         public int SuccessOrders { get; set; }
-
-        public string Avatar { get; set; } = null!;
 
         public DateTime LastOnline { get; set; }
     }
