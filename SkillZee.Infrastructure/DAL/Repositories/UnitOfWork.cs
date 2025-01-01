@@ -2,7 +2,7 @@
 using SkillZee.Domain.Entities;
 using SkillZee.Domain.Interfaces.Repositories;
 
-namespace SkillZee.Infrastructure.DAL
+namespace SkillZee.Infrastructure.DAL.Repositories
 {
     public class UnitOfWork(
         SkillZeeDbContext dbContext,
