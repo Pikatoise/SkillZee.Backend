@@ -14,4 +14,13 @@ public sealed class SkillZeeDbContext: DbContext
     }
 
     public DbSet<User> Users { get; set; } = null!;
+    public DbSet<WorkerInfo> WorkerInfos { get; set; } = null!;
+    public DbSet<Tip> Tips { get; set; } = null!;
+    public DbSet<Skill> Skills { get; set; } = null!;
+    public DbSet<OrderSpeed> OrderSpeeds { get; set; } = null!;
+    public DbSet<OrderResult> OrderResults { get; set; } = null!;
+    public DbSet<Order> Orders { get; set; } = null!;
+    public DbSet<BalanceTransaction> BalanceTransactions { get; set; } = null!;
+    public DbSet<Area> Areas { get; set; } = null!;
+
 }
