@@ -1,4 +1,3 @@
-
 using SkillZee.API.Extensions;
 
 namespace SkillZee.API

@@ -23,13 +23,9 @@ namespace SkillZee.Infrastructure.DAL.Configurations
                 .WithMany(x => x.Orders)
                 .HasForeignKey(x => x.AreaId);
 
-            builder.HasOne(x => x.Customer)
-                .WithMany(x => x.Orders)
-                .HasForeignKey(x => x.CustomerId);
+            builder.HasOne(x => x.Customer);
 
-            builder.HasOne(x => x.Worker)
-                .WithMany(x => x.Orders)
-                .HasForeignKey(x => x.WorkerId);
+            builder.HasOne(x => x.Worker);
 
             builder.HasOne(x => x.Result)
                 .WithOne(x => x.Order)

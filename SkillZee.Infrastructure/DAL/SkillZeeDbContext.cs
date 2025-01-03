@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace SkillZee.Infrastructure.DAL;
 
-public sealed class SkillZeeDbContext: DbContext
+public class SkillZeeDbContext: DbContext
 {
     public SkillZeeDbContext(DbContextOptions<SkillZeeDbContext> options) : base(options)
     {

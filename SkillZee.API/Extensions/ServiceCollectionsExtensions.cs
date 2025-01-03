@@ -19,7 +19,8 @@ namespace SkillZee.API.Extensions
                     Version = "v1",
                     Contact = new OpenApiContact
                     {
-                        Url = new Uri("t.me/pikatoise")
+                        Url = new Uri("https://t.me/pikatoise"),
+                        Name = "Telegram"
                     }
                 });
 

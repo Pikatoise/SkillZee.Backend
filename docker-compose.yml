@@ -1,0 +1,33 @@
+services:
+  skillzee.api:
+    image: ${DOCKER_REGISTRY-}skillzee-api
+    build:
+      context: .
+      dockerfile: SkillZee.API/Dockerfile
+    ports:
+       - "5000:80" 
+    depends_on:
+        - skillzee.db
+    networks:
+        - app-network
+
+  skillzee.db:
+    container_name: postgresql_db_skillzee
+    image: postgres:latest
+    environment:
+         - POSTGRES_USER=root
+         - POSTGRES_PASSWORD=root
+         - POSTGRES_DB=skillzee-backend-db
+    ports:
+        - "5432:5432"
+    volumes:
+        - "pgdataskillzee:/var/lib/postgresql/data"
+    networks:
+        - app-network
+
+networks:   
+  app-network: {}
+
+volumes:
+    pgdataskillzee: {}
+    rabbitmqdata: {}
