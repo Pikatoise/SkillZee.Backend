@@ -15,5 +15,8 @@
         public int SuccessOrders { get; set; }
 
         public DateTime LastOnline { get; set; }
+
+        public Guid? WorkerInfoId { get; set; }
+        public WorkerInfo? WorkerInfo { get; set; }
     }
 }

@@ -14,7 +14,9 @@ namespace SkillZee.Infrastructure.DAL.Configurations
             builder.HasMany<Area>(x => x.WorkerAreas);
             builder.HasMany<Skill>(x => x.WorkerSkills);
 
-            builder.HasOne<User>(x => x.User);
+            builder.HasOne<User>(x => x.Worker)
+                .WithOne(x => x.WorkerInfo)
+                .HasForeignKey<WorkerInfo>(x => x.WorkerId);
         }
     }
 }

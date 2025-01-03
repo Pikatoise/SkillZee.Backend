@@ -7,7 +7,7 @@
         public List<Area> WorkerAreas { get; set; } = [];
         public List<Skill> WorkerSkills { get; set; } = [];
 
-        public required User User { get; set; }
+        public required User Worker { get; set; }
         public Guid WorkerId { get; set; }
     }
 }
