@@ -11,8 +11,10 @@ namespace SkillZee.Infrastructure.DAL.Configurations
             builder.HasKey(x => x.Id);
             builder.Property(x => x.IsActive).HasDefaultValue(true);
 
-            builder.HasMany<Area>(x => x.WorkerAreas);
-            builder.HasMany<Skill>(x => x.WorkerSkills);
+            builder.HasMany<Area>(x => x.WorkerAreas)
+                .WithMany(x => x.WorkerInfos);
+            builder.HasMany<Skill>(x => x.WorkerSkills)
+                .WithMany(x => x.WorkerInfos);
 
             builder.HasOne<User>(x => x.Worker)
                 .WithOne(x => x.WorkerInfo)
