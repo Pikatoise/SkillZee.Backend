@@ -5,5 +5,7 @@
         public required string Title { get; set; }
 
         public List<WorkerInfo> WorkerInfos { get; set; } = [];
+
+        public List<Order> Orders { get; set; } = [];
     }
 }

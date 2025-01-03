@@ -4,7 +4,7 @@
     {
         public double Amount { get; set; }
 
-        public Guid OrderId { get; set; }
-        public required Order Order { get; set; }
+        public Guid ResultId { get; set; }
+        public required OrderResult Result { get; set; }
     }
 }

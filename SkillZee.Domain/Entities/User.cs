@@ -18,5 +18,9 @@
 
         public Guid? WorkerInfoId { get; set; }
         public WorkerInfo? WorkerInfo { get; set; }
+
+        public List<Order> Orders { get; set; } = [];
+
+        public List<BalanceTransaction> BalanceTransactions { get; set; } = [];
     }
 }

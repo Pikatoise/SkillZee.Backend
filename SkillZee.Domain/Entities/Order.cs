@@ -19,7 +19,7 @@
         public Guid? WorkerId { get; set; }
         public User? Worker { get; set; }
 
-        public Guid? TipId { get; set; } = null;
-        public Tip? Tip { get; set; }
+        public Guid? ResultId { get; set; }
+        public OrderResult? Result { get; set; }
     }
 }
