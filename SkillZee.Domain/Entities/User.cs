@@ -20,5 +20,7 @@
         public WorkerInfo? WorkerInfo { get; set; }
 
         public List<BalanceTransaction> BalanceTransactions { get; set; } = [];
+
+        public List<OrderResponse> Responses { get; set; } = [];
     }
 }

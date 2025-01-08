@@ -14,7 +14,8 @@ namespace SkillZee.Infrastructure.DAL.Repositories
         IBaseRepository<OrderResult> orderResults,
         IBaseRepository<Order> orders,
         IBaseRepository<BalanceTransaction> balanceTransactions,
-        IBaseRepository<Area> areas)
+        IBaseRepository<Area> areas,
+        IBaseRepository<OrderResponse> orderResponses)
     {
         readonly SkillZeeDbContext _dbContext = dbContext;
 
@@ -27,6 +28,7 @@ namespace SkillZee.Infrastructure.DAL.Repositories
         public IBaseRepository<Order> Orders { get; } = orders;
         public IBaseRepository<BalanceTransaction> BalanceTransactions { get; } = balanceTransactions;
         public IBaseRepository<Area> Areas { get; } = areas;
+        public IBaseRepository<OrderResponse> OrderResponses { get; } = orderResponses;
 
         public async Task<IDbContextTransaction> BeginTransactionAsync() =>
             await _dbContext.Database.BeginTransactionAsync();

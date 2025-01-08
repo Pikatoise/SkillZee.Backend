@@ -21,5 +21,7 @@
 
         public Guid? ResultId { get; set; }
         public OrderResult? Result { get; set; }
+
+        public List<OrderResponse> Responses { get; set; } = [];
     }
 }
