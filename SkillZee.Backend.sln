@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillZee.Application", "Ski
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4D156B50-D059-4150-99F9-26BDC29F0721}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{059D2DE1-9057-431D-9F24-FBA12CC19EB2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5FA1E84C-7787-426E-B64D-30037A4AC86E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +46,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B59DF58E-DD8D-4EF8-927A-96AFEDE6C044} = {059D2DE1-9057-431D-9F24-FBA12CC19EB2}
+		{8089F07B-207D-40BA-A9F4-B7B3ED6EC8F9} = {059D2DE1-9057-431D-9F24-FBA12CC19EB2}
+		{82AC9021-8995-4A5C-841C-7150E2A7B4E5} = {059D2DE1-9057-431D-9F24-FBA12CC19EB2}
+		{25BBA9CB-6233-441E-850B-E7C462399FA0} = {059D2DE1-9057-431D-9F24-FBA12CC19EB2}
 	EndGlobalSection
 EndGlobal
