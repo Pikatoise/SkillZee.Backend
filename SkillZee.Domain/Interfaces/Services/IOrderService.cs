@@ -3,7 +3,7 @@ using SkillZee.Domain.Result;
 
 namespace SkillZee.Domain.Interfaces.Services
 {
-    public interface IOrderService
+    public interface IOrderService: IBaseEntityService<OrderDto>
     {
         Task<BaseResult<OrderDto>> CreateOrder(CreateOrderDto dto);
     }
