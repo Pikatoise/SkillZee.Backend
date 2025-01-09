@@ -1,10 +1,12 @@
 ﻿namespace SkillZee.Domain.DTO.OrderSpeed
 {
-    public record OrderSpeedDto(
-        Guid Id,
-        DateTime CreatedAt,
-        bool IsActive,
+    public class OrderSpeedDto
+    {
+        public Guid Id { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public bool IsActive { get; set; }
 
-        string Title,
-        double RewardMultiplier);
+        public required string Title { get; set; }
+        public double RewardMultiplier { get; set; }
+    }
 }

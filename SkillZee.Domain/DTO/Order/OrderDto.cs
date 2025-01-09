@@ -4,15 +4,17 @@ using SkillZee.Domain.DTO.User;
 
 namespace SkillZee.Domain.DTO.Order
 {
-    public record OrderDto(
-        Guid Id,
-        DateTime CreatedAt,
-        bool IsActive,
+    public class OrderDto
+    {
+        public Guid Id { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public bool IsActive { get; set; }
 
-        string Title,
-        string Description,
-        double Reward,
-        OrderSpeedDto OrderSpeed,
-        AreaDto Area,
-        UserDto Customer);
+        public required string Title { get; set; }
+        public required string Description { get; set; }
+        public double Reward { get; set; }
+        public required OrderSpeedDto OrderSpeed { get; set; }
+        public required AreaDto Area { get; set; }
+        public required UserDto Customer { get; set; }
+    };
 }
