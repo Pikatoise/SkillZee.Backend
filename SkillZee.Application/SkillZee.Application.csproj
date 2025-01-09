@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SkillZee.Domain\SkillZee.Domain.csproj" />
+    <ProjectReference Include="..\SkillZee.Infrastructure\SkillZee.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
