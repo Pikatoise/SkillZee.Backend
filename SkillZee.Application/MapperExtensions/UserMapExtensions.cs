@@ -15,7 +15,7 @@ namespace SkillZee.Application.MapperExtensions
             IsActive = user.IsActive,
             IsWorker = user.IsWorker,
             SuccessOrders = user.SuccessOrders,
-            WorkerInfo = user.WorkerInfo.ToDto()
+            WorkerInfo = user.WorkerInfo != null ? user.WorkerInfo.ToDto() : null
         };
     }
 }
