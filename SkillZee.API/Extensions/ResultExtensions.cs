@@ -7,7 +7,7 @@ namespace SkillZee.API.Extensions
     {
         public static IResult ToProblemDetails(this BaseResult result)
         {
-            if (result.IsSuccess)
+            if (result.Error == null)
                 throw new InvalidOperationException("Attempt to return success result as error");
 
             return Results.Problem
