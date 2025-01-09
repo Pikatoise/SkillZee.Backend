@@ -1,9 +1,11 @@
 ﻿namespace SkillZee.Domain.DTO.Skill
 {
-    public record SkillDto(
-        Guid Id,
-        DateTime CreatedAt,
-        bool IsActive,
+    public class SkillDto
+    {
+        public Guid Id { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public bool IsActive { get; set; }
 
-        string Title);
+        public required string Title { get; set; }
+    }
 }

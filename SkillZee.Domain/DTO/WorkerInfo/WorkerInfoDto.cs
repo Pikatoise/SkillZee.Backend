@@ -3,12 +3,14 @@ using SkillZee.Domain.DTO.Skill;
 
 namespace SkillZee.Domain.DTO.WorkerInfo
 {
-    public record WorkerInfoDto(
-        Guid Id,
-        DateTime CreatedAt,
-        bool IsActive,
+    public class WorkerInfoDto
+    {
+        public Guid Id { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public bool IsActive { get; set; }
 
-        string Description,
-        List<AreaDto> Areas,
-        List<SkillDto> Skills);
+        public required string Description { get; set; }
+        public required List<AreaDto> Areas { get; set; }
+        public required List<SkillDto> Skills { get; set; }
+    }
 }
