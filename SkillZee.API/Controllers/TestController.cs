@@ -1,20 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SkillZee.Infrastructure.DAL.Repositories;
+using SkillZee.Domain.DTO.Order;
+using SkillZee.Domain.Interfaces.Services;
+using SkillZee.Domain.Result;
 
 namespace SkillZee.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TestController(UnitOfWork unit): ControllerBase
+    public class TestController(IOrderService orderService): ControllerBase
     {
-        UnitOfWork _unit = unit;
+        readonly IOrderService _orderService = orderService;
 
-        [HttpGet]
-        public ActionResult Get()
+        [HttpPost("create")]
+        public async Task<BaseResult<OrderDto>> CreateOrder([FromBody] CreateOrderDto createDto)
         {
-            var usersCount = _unit.Users.GetAll().Count();
+            var result = await _orderService.CreateOrder(createDto);
 
-            return Ok($"{usersCount}");
+            return result;
         }
     }
 }

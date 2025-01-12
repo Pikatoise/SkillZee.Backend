@@ -3,9 +3,9 @@
     public class OrderResponse: BaseEntity
     {
         public Guid WorkerId { get; set; }
-        public required User Worker { get; set; }
+        public User Worker { get; set; } = null!;
 
         public Guid OrderId { get; set; }
-        public required Order Order { get; set; }
+        public Order Order { get; set; } = null!;
     }
 }

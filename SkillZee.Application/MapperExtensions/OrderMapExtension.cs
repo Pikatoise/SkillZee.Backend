@@ -17,5 +17,15 @@ namespace SkillZee.Application.MapperExtensions
             OrderSpeed = order.OrderSpeed.ToDto(),
             Customer = order.Customer.ToDto()
         };
+
+        public static Order ToEntity(this CreateOrderDto dto) => new Order()
+        {
+            Title = dto.Title,
+            Description = dto.Description,
+            Reward = dto.Reward,
+            OrderSpeedId = dto.OrderSpeedId,
+            AreaId = dto.AreaId,
+            CustomerId = dto.CustomerId
+        };
     }
 }

@@ -12,6 +12,6 @@
         public Tip? Tip { get; set; }
 
         public Guid OrderId { get; set; }
-        public required Order Order { get; set; }
+        public Order Order { get; set; } = null!;
     }
 }

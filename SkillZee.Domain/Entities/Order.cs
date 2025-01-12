@@ -8,13 +8,13 @@
         public double Reward { get; set; }
 
         public Guid OrderSpeedId { get; set; }
-        public required OrderSpeed OrderSpeed { get; set; }
+        public OrderSpeed OrderSpeed { get; set; } = null!;
 
         public Guid AreaId { get; set; }
-        public required Area Area { get; set; }
+        public Area Area { get; set; } = null!;
 
         public Guid CustomerId { get; set; }
-        public required User Customer { get; set; }
+        public User Customer { get; set; } = null!;
 
         public Guid? WorkerId { get; set; }
         public User? Worker { get; set; }

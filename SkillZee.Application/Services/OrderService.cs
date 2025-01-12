@@ -1,4 +1,5 @@
-﻿using SkillZee.Domain;
+﻿using SkillZee.Application.MapperExtensions;
+using SkillZee.Domain;
 using SkillZee.Domain.DTO.Order;
 using SkillZee.Domain.Filters;
 using SkillZee.Domain.Interfaces.Services;
@@ -9,11 +10,15 @@ namespace SkillZee.Application.Services
 {
     public class OrderService(UnitOfWork unitOfWork): IOrderService
     {
-        UnitOfWork _unitOfWork = unitOfWork;
+        readonly UnitOfWork _unitOfWork = unitOfWork;
 
-        public Task<BaseResult<OrderDto>> CreateOrder(CreateOrderDto dto)
+        public async Task<BaseResult<OrderDto>> CreateOrder(CreateOrderDto dto)
         {
-            throw new NotImplementedException();
+            var entity = dto.ToEntity();
+
+            await _unitOfWork.Orders.CreateAsync(entity);
+
+            return new BaseResult<OrderDto>(entity.ToDto());
         }
 
         public Task<BaseResult<OrderDto>> Delete(Guid id)
