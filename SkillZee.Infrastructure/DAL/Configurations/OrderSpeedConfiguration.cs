@@ -18,16 +18,22 @@ namespace SkillZee.Infrastructure.DAL.Configurations
             {
                 new OrderSpeed()
                 {
+                    Id = Guid.Parse("019f5b79-1fe2-435d-99f3-837e38047036"),
+                    CreatedAt = new DateTime(2025 ,01 ,15 ,12 ,0 ,0 ,DateTimeKind.Utc),
                     Title = "Стандартно",
                     RewardMultiplier = 1.0
                 },
                 new OrderSpeed()
                 {
+                    Id = Guid.Parse("7d318e1a-cded-4481-b24b-77b385735245"),
+                    CreatedAt = new DateTime(2025 ,01 ,15 ,12 ,0 ,0 ,DateTimeKind.Utc),
                     Title = "Срочно",
                     RewardMultiplier = 1.1
                 },
                 new OrderSpeed()
                 {
+                    Id = Guid.Parse("1a452389-4644-45af-be2c-359ceec260e5"),
+                    CreatedAt = new DateTime(2025 ,01 ,15 ,12 ,0 ,0 ,DateTimeKind.Utc),
                     Title = "Очень срочно",
                     RewardMultiplier = 1.2
                 }
