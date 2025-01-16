@@ -1,4 +1,5 @@
-﻿using SkillZee.Application.MapperExtensions;
+﻿using Microsoft.EntityFrameworkCore;
+using SkillZee.Application.MapperExtensions;
 using SkillZee.Domain;
 using SkillZee.Domain.DTO.Order;
 using SkillZee.Domain.Filters;
@@ -17,6 +18,14 @@ namespace SkillZee.Application.Services
             var entity = dto.ToEntity();
 
             await _unitOfWork.Orders.CreateAsync(entity);
+
+            await _unitOfWork.SaveChangesAsync();
+
+            entity = await _unitOfWork.Orders.GetAll()
+                .Include(x => x.OrderSpeed)
+                .Include(x => x.Area)
+                .Include(x => x.Customer).
+                FirstOrDefaultAsync(x => x.Id == entity.Id);
 
             return new BaseResult<OrderDto>(entity.ToDto());
         }
