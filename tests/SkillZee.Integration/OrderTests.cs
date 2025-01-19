@@ -31,7 +31,7 @@ namespace SkillZee.Integration
 
             var orderDto = new CreateOrderDto
             {
-                Title = "Test Order 1",
+                Title = "Test Order",
                 Description = "Test description",
                 Reward = 300.0,
                 AreaId = area.Id,

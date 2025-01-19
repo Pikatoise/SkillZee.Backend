@@ -55,7 +55,9 @@ namespace SkillZee.API.Extensions
         {
             builder.Services.AddDbContext<SkillZeeDbContext>(opt =>
             {
-                opt.UseNpgsql(builder.Configuration.GetConnectionString("SkillZeeDBCompose"));
+                opt.UseNpgsql(
+                    builder.Configuration.GetConnectionString("SkillZeeDBCompose")
+                );
                 //opt.ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
 
             });
